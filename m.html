@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="0.1">Mr.OSKAR Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-monokai.css">
+    <link rel="stylesheet" href="./css/style-main.css">
+</head>
+
+<body>
+    <header id="1">
+    	<i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
+    	
+   </header>
+    <div class="sidebar" id="sidebar">
+    <div class="logo"></div>
+    <div id="1" class="site-name">
+    <p id="2" style="font-size:13px;color:#666;"></p>
+    
+
+</div>
+
+    <div class="main-title" onclick="toggleSection('section1')">
+        <span>About </span><i class="fas fa-chevron-right"></i>
+    </div>
+    <div id="section1" class="subtitles">
+        <p id="about-us">About us</p>
+        
+        <hr>
+        	
+        <p id="about-use">About use</p>
+    </div>
+    <script src="./j/copy.js"></script>
+    
+<!--
+    <div class="main-title" onclick="toggleSection('section2')">
+        <span>Main Title 2</span><i class="fas fa-chevron-right"></i>
+    </div>
+    <div id="section2" class="subtitles">
+        <p>Subheading A</p>
+        <hr>
+        <p>Subheading B</p>
+    </div> -->
+    <div class="main-title" onclick="toggleSection('contact')">
+        <span>Customer Service</span><i class="fas fa-chevron-right"></i>
+    </div>
+    <div id="contact" class="subtitles">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/oskar.1k"><i class="fab fa-instagram"></i> instagram</a>
+            <a href="https://www.linkedin.com/in/%D8%A7%D8%A8%D8%AF%D8%A7%D8%B9-for-you-783579304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://api.whatsapp.com/send?phone=+967773957426"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+<script>
+function toggleSection(id) {
+    const section = document.getElementById(id);
+    const icon = section.previousElementSibling.querySelector('i');
+    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    icon.classList.toggle('rotate');
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const isOpen = sidebar.style.width === '250px';
+
+    sidebar.style.width = isOpen ? '0' : '250px';
+    overlay.classList.toggle('active', !isOpen);
+}
+
+function closeSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    sidebar.style.width = '0';
+    overlay.classList.remove('active');
+}
+</script>
+    <div id="editor-container">
+        <button id="copy-btn">Copy</button>
+        <button id="fullscreen-btn">Zoom</button>
+        <iframe id="output"></iframe>
+        <div id="editor"></div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+    <script src="./j/e.js"></script>
+        <script>
+        // إضافة حالة إلى سجل التنقل عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            window.history.pushState(null, "", window.location.href);
+        });
+
+        // التعامل مع زر الرجوع
+        window.addEventListener("popstate", function () {
+            const confirmExit = confirm("Are you sure you want to leave this page?");
+            if (confirmExit) {
+                // السماح بالخروج
+                window.history.back();
+            } else {
+                // إعادة إضافة الحالة لمنع الخروج
+                window.history.pushState(null, "", window.location.href);
+            }
+        });
+    </script>
+</body>
+</html>

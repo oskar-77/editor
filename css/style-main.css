@@ -1,0 +1,247 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #ff6f00;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5em;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+.menu-icon{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor: pointer;
+    }
+
+
+#editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    
+}
+
+#editor {
+    flex: 1;
+    height: 50%;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top:4px;
+}
+
+#copy-btn,
+#fullscreen-btn {
+    position: absolute;
+    right: 15px;
+    background-color: #ff6f00;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+#copy-btn {
+    bottom: 17.5rem;
+}
+
+#fullscreen-btn {
+    bottom: 15rem;
+    
+    
+    
+}
+
+#copy-btn:hover,
+#fullscreen-btn:hover {
+    background-color: #ffa040;
+    transform: scale(1.1);
+}
+
+#output {
+    flex: 1;
+    height: 50%;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    #copy-btn,
+    #fullscreen-btn {
+        font-size: 0.7em;
+        padding: 4px 8px;
+    }
+
+    
+
+    #output {
+        height: 40vh;
+    }
+}
+
+
+
+
+
+    .sidebar {
+width: 0;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+background: #333;
+color: #fff;
+overflow-y: auto; /* السماح بالتمرير العمودي */
+transition: width 0.3s;
+padding: 20px 0;
+z-index: 1000; /* وضع العنصر فوق باقي العناصر */
+padding-bottom: 2rem;
+margin-bottom:3rem;
+}
+.logo {
+width: 150px;
+height: 150px;
+
+border-radius: 50%;
+margin: 0 auto 20px;
+background-image: url('../T.jpg');
+background-size: cover;
+
+}
+.site-name {
+text-align: center;
+font-size: 24px;
+margin-bottom: 20px;
+}
+.main-title {
+padding: 15px 20px;
+background: #555;
+margin: 15px 0;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 5px;
+transition: background 0.3s, color 0.3s;
+}
+.main-title:hover {
+background: #444;
+color: #ff8800;
+}
+.subtitles {
+display: block;
+padding: 10px 20px;
+margin-top: 5px;
+border-left: 2px solid #ff8800;
+}
+.subtitles p {
+margin: 15px 0;
+font-size: 16px;
+position: relative;
+}
+.subtitles p::before {
+content: "";
+position: absolute;
+left: -10px;
+top: 50%;
+transform: translateY(-50%);
+width: 6px;
+height: 6px;
+background: #ff8800;
+border-radius: 50%;
+}
+.subtitles a{
+ text-decoration: none;
+color: #fff;
+font-size: 16px;
+display: flex;
+align-items: center;
+gap: 10px; /* مسافة بين الأيقونة والنص */
+transition: color 0.3s;
+
+}
+.subtitles p:hover {
+color: #ff8800;
+}
+
+.social-links {
+display: flex;
+flex-direction: column; /* عرض الروابط بشكل رأسي */
+gap: 10px; /* مسافة بين الروابط */
+margin-top: 10px;
+align-items: start;
+padding-bottom:2rem;
+}
+.social-links a {
+text-decoration: none;
+color: #fff;
+font-size: 16px;
+display: flex;
+align-items: center;
+gap: 10px; /* مسافة بين الأيقونة والنص */
+transition: color 0.3s;
+}
+.social-links a i {
+font-size: 20px;
+color: #ff8800;
+}
+.social-links a:hover {
+color: #ff8800;
+}
+.rotate {
+transform: rotate(90deg);
+}
+.content {
+padding: 20px;
+transition: margin-left 0.3s;
+}
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 999; /* وضع الطبقة فوق المحتوى ولكن أسفل الـ Sidebar */
+display: none; /* إخفاء الطبقة الافتراضية */
+transition: opacity 0.3s;
+}
+.overlay.active {
+display: block; /* إظهار الطبقة عند تفعيل الـ Sidebar */
+}

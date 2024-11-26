@@ -1,0 +1,114 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ff8c00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cube-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: spin 4s infinite linear;
+}
+
+.cube-face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: 2px solid #1a1a1a;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+.cube-face div {
+    background-color: transparent;
+    border: 1px solid #ff8c00;
+    box-shadow: 0 0 8px #ff8c00;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    
+}
+
+.cube-face div:hover {
+    transform: translateZ(10px);
+    box-shadow: 0 0 15px #ff8c00;
+}
+
+.cube-face.front {
+    transform: translateZ(75px);
+}
+
+.cube-face.back {
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+.cube-face.left {
+    transform: rotateY(-90deg) translateZ(75px);
+}
+
+.cube-face.right {
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.cube-face.top {
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.cube-face.bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.splash-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.splash-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: glow 1.5s forwards;
+    animation-delay: calc(0.1s * var(--i)); /* Timing for each letter */
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0;
+        text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 15px #ff8c00, 0 0 30px #ff8c00;
+    }
+    100% {
+        opacity: 0;
+        text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00;
+    }
+}
+

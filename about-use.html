@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mr.OSKAR Editor</title>
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+    <div class="circle">
+<div class="cube-container">
+        <!-- أوجه المكعب -->
+        <div class="cube-face front">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="cube-face back">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="cube-face left">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="cube-face right">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="cube-face top">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="cube-face bottom">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+         <div class="cube-face bottom">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+
+    
+</div>
+    <h1 id="1.1"></h1>
+    <p id="1.2"><br><br><p id="1.3"></p></p>
+    
+
+    <ul>
+        <li onclick="toggleSubMenu(this)">start
+            <ul>
+                <li onclick="showContent('content1')">How it use :</li>
+                <li onclick="showContent('content2')">How it works :</li>
+                
+            </ul>
+        </li>
+        <li onclick="toggleSubMenu(this)">functions
+            <ul>
+                <li onclick="showContent('content4')">Writing assistant :</li>
+                <li onclick="showContent('content5')">Select the text :</li>
+                
+            </ul>
+        </li>
+    </ul>
+
+    <div id="content1" class="content">
+        <div class="image-placeholder" style="background-image:url(./image/About-use-1.jpg);"></div>
+        <h2>How it used :</h2>
+        <p>The picture explains the simple things you deal with in the editor.</p>
+    </div>
+    <div id="content2" class="content">
+        <div class="image-placeholder" style="background-image:url(./image/About-use-2.jpg); background-size:cover;"></div>
+        <h2>Step 1 :</h2>
+        <p>You will write the html, css and javascript codes in the editor.</p>
+        <h2>Step 2 :</h2>
+        <p>The editor will automatically run the code and show you instant results making it easy to see what you've done.</p>
+    </div>
+    
+    <div id="content4" class="content">
+        <div class="image-placeholder" style="background-image:url(./image/About-use-3.jpg); background-size:cover;"></div>
+        <h2>Writing assistant :</h2>
+        <p>When writing codes, we have provided you with an assistant that writes the code as if it were on a computer, so that you write a part of the code and it shows you suggestions that when you click on them, it automatically completes the code.</p>
+    </div>
+    <div id="content5" class="content">
+        <div class="image-placeholder" style="background-image:url(./image/About-use-4.jpg); background-size:cover;"></div>
+        <h2>Select the text :</h2>
+        <p>There are some minor problems in defining texts, but it is not a problem. You can select the code by simply pressing and dragging to select and copy the code you want, copy, delete it, or anything you want to do.</p>
+    </div>
+    
+
+    <script src="./j/abutuse.js">
+
+    </script>
+</body>
+
+</html>
