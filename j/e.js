@@ -2,7 +2,7 @@ function w(){
     document.getElementById('1').textContent = "Mr.OSKAR";
     document.getElementById('0.1').textContent = "Mr.OSKAR Editor";
     document.getElementById('2').textContent = "Editor and live viewer for html, css and javascript codes";
-    document.getElementById('editor').textContent = "Mr.OSKAR : Write  HTML/CSS here ..";
+    
     
    
     
